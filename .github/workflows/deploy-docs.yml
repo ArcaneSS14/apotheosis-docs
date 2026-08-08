@@ -37,7 +37,7 @@ jobs:
         run: python scripts/check_links.py --base-path /apotheosis-docs/
 
       - name: Настроить GitHub Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
 
       - name: Загрузить сайт
         uses: actions/upload-pages-artifact@v3
