@@ -1,0 +1,10 @@
+{% extends "main.html" %}
+
+{% block content %}
+  <section class="not-found">
+    <p class="not-found__code">404</p>
+    <h1>Страница не найдена</h1>
+    <p>Эта страница ещё не вошла в летопись.</p>
+    <a class="hero__button" href="{{ nav.homepage.url | url }}">Вернуться на главную</a>
+  </section>
+{% endblock %}

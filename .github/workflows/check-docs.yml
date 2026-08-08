@@ -1,0 +1,30 @@
+name: Проверка документации
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Получить репозиторий
+        uses: actions/checkout@v7
+
+      - name: Настроить Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Установить зависимости
+        run: pip install -r requirements.txt
+
+      - name: Проверить сборку
+        run: mkdocs build --strict
+
+      - name: Проверить локальные ссылки
+        run: python scripts/check_links.py --base-path /apotheosis-docs/
