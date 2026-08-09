@@ -21,7 +21,7 @@ window.addEventListener("scroll", updateProgress, { passive: true });
 window.addEventListener("resize", updateProgress, { passive: true });
 
 const createAmbientDust = (host) => {
-  const context = canvas.getContext("2d");
+  const canvas = document.createElement("canvas");
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const particles = [];
   let width = 0;
@@ -34,15 +34,21 @@ const createAmbientDust = (host) => {
   canvas.setAttribute("aria-hidden", "true");
   host.prepend(canvas);
 
+  const context = canvas.getContext("2d");
+  if (!context) {
+    canvas.remove();
+    return () => {};
+  }
+
   const resetParticle = (particle, initial = false) => {
     particle.x = Math.random() * width;
     particle.y = Math.random() * height;
-    particle.radius = .45 + Math.random() * 1.25;
+    particle.radius = .6 + Math.random() * 1.65;
     particle.vx = (Math.random() - .5) * 2.4;
     particle.vy = -2.5 - Math.random() * 6.5;
     particle.life = 6 + Math.random() * 9;
     particle.age = initial ? Math.random() * particle.life : 0;
-    particle.opacity = .07 + Math.random() * .16;
+    particle.opacity = .13 + Math.random() * .24;
   };
 
   const refreshDustColor = () => {
@@ -60,7 +66,7 @@ const createAmbientDust = (host) => {
     context.setTransform(ratio, 0, 0, ratio, 0, 0);
     refreshDustColor();
 
-    const desiredCount = Math.min(42, Math.max(18, Math.round(width * height / 34000)));
+    const desiredCount = Math.min(72, Math.max(28, Math.round(width * height / 23000)));
     while (particles.length < desiredCount) {
       const particle = {};
       resetParticle(particle, true);
