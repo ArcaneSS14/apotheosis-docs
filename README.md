@@ -1,5 +1,7 @@
 # Apotheosis Docs
 
+[Перейти на сайт.](https://vecortys.github.io/apotheosis-docs/)
+
 Дизайн-документ и техническая документация средневекового билда Space Station 14.
 
 ## Локальный запуск
