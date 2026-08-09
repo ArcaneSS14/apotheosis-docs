@@ -1,4 +1,4 @@
-site_name: Апофеосиз
+site_name: Апофеозис
 site_description: Дизайн-документ и техническая документация Arcane SS14 - Apotheosis
 site_author: Apotheosis Team
 site_url: https://vecortys.github.io/apotheosis-docs/
@@ -154,6 +154,5 @@ nav:
       - contributing/index.md
       - Как писать документацию: contributing/writing.md
       - Шаблоны:
-          - Фича: contributing/templates/feature.md
-          - Роль: contributing/templates/role.md
           - Архитектурное решение: contributing/templates/adr.md
+          - Фича: contributing/templates/feature.md

@@ -8,7 +8,7 @@ hide:
 <section class="hero">
   <div class="hero__content">
     <p class="hero__eyebrow">Space Station 14 · Medieval Build</p>
-    <h1>Апофеосиз</h1>
+    <h1>Апофеозис</h1>
     <p class="hero__lead">Документация проекта</p>
     <div class="hero__actions">
       <a class="hero__button" href="gdd/">Дизайн-документ</a>
