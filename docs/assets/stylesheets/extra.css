@@ -11,6 +11,9 @@
   --ap-nav-active: #7d2b2b;
   --ap-ornament: #8a4e22;
   --ap-border: rgba(184, 138, 68, 0.28);
+  --ap-ambient-glow: rgba(184, 138, 68, .055);
+  --ap-ambient-warmth: rgba(125, 43, 43, .025);
+  --ap-dust-rgb: 125, 88, 47;
   --md-primary-fg-color: #211a16;
   --md-primary-fg-color--light: #30251f;
   --md-primary-fg-color--dark: #15110f;
@@ -33,6 +36,9 @@
   --ap-nav-active: #e1b66f;
   --ap-ornament: #d5ad6b;
   --ap-border: rgba(213, 173, 107, 0.24);
+  --ap-ambient-glow: rgba(213, 173, 107, .07);
+  --ap-ambient-warmth: rgba(125, 43, 43, .045);
+  --ap-dust-rgb: 213, 173, 107;
 }
 
 [data-md-color-scheme="default"] {
@@ -45,7 +51,31 @@
 }
 
 html { scroll-behavior: smooth; }
-body { background-image: radial-gradient(circle at 30% 0, rgba(184, 138, 68, .06), transparent 32rem); }
+body { background: var(--md-default-bg-color); }
+
+/* A fixed glow has no visible "edge" as a long page scrolls underneath it. */
+.md-main {
+  position: relative;
+  isolation: isolate;
+}
+.md-main::before {
+  content: "";
+  position: fixed;
+  z-index: -2;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 85% 68% at 27% -8%, var(--ap-ambient-glow), transparent 72%),
+    radial-gradient(ellipse 70% 60% at 82% 108%, var(--ap-ambient-warmth), transparent 76%);
+}
+.ambient-dust {
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
 
 ::selection { color: #fff8e8; background: var(--ap-red); }
 
@@ -203,6 +233,7 @@ body { background-image: radial-gradient(circle at 30% 0, rgba(184, 138, 68, .06
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+  .ambient-dust { display: none; }
 }
 
 @media print {
@@ -213,6 +244,7 @@ body { background-image: radial-gradient(circle at 30% 0, rgba(184, 138, 68, .06
   .md-footer,
   .md-content__button,
   .reading-progress,
+  .ambient-dust,
   .hero__actions { display: none !important; }
 
   body { background: #fff; }
