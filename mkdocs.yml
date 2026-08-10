@@ -1,9 +1,9 @@
 site_name: Апофеозис
 site_description: Дизайн-документ и техническая документация Arcane SS14 - Apotheosis
 site_author: Apotheosis Team
-site_url: https://vecortys.github.io/apotheosis-docs/
+site_url: https://arcaness14.github.io/apotheosis-docs/
 repo_name: apotheosis-docs
-repo_url: https://github.com/Vecortys/apotheosis-docs
+repo_url: https://arcaness14.github.io/apotheosis-docs/
 edit_uri: edit/main/docs/
 
 theme:
