@@ -2,7 +2,7 @@ site_name: Апофеозис
 site_description: Дизайн-документ и техническая документация Arcane SS14 - Apotheosis
 site_author: Apotheosis Team
 site_url: https://vecortys.github.io/apotheosis-docs/
-repo_name: Vecortys/apotheosis-docs
+repo_name: apotheosis-docs
 repo_url: https://github.com/Vecortys/apotheosis-docs
 edit_uri: edit/main/docs/
 
@@ -149,7 +149,8 @@ nav:
   - Производство:
       - production/index.md
       - Дорожная карта: production/roadmap.md
-      - Журнал решений: production/decisions.md
+      - Журнал решений:
+          - ADR №1: production/adr/adr-001.md
   - Участие:
       - contributing/index.md
       - Как писать документацию: contributing/writing.md
