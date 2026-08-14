@@ -131,15 +131,13 @@ nav:
   - Главная: index.md
   - Проект:
       - project/index.md
-      - Видение: project/vision.md
-      - Принципы игрового дизайна: project/pillars.md
-      - Словарь: project/glossary.md
+      - Игровой дизайн: project/pillars.md
   - Дизайн-документ:
       - gdd/index.md
       - Игровой цикл: gdd/core-loop.md
       - Мир и сеттинг: gdd/world.md
       - Бой: gdd/combat.md
-      - Роли и расы: gdd/roles.md
+      - Роли и происхождения: gdd/roles.md
       - Интерфейс: gdd/ux.md
   - Разработка:
       - development/index.md

@@ -8,10 +8,8 @@ description: Поэтапный план заполнения документа
 
 ## Этап 1.
 
-- [ ] [Проект](../project/index.md)
-- [ ] [Видение](../project/vision.md)
-- [ ] [Принципы игрового дизайна](../project/pillars.md)
-- [ ] [Словарь](../project/glossary.md)
+- [x] [Проект](../project/index.md)
+- [x] [Принципы игрового дизайна](../project/pillars.md)
 
 ## Этап 2.
 
